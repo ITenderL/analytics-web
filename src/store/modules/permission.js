@@ -1,5 +1,5 @@
 //导入路由脚本文件中的属性
-import {constantRoutes} from '@/router'
+import {asyncRoutes, constantRoutes} from '@/router'
 //导入获取菜单数据的方法
 import { getMenuList } from '@/api/user'
 //导入Layout组件
@@ -69,7 +69,7 @@ const mutations = {
 const actions = {
   /**
    * 动态生成路由
-   * @returns 
+   * @returns
    */
   generateRoutes({commit}, roles) {
     return new Promise((resolve,reject) => {
@@ -80,6 +80,12 @@ const actions = {
         let accessedRoutes;
         //判断状态码是否是200，如果是则表示成功
         if (res.code === 200) {
+          // if (roles.includes('admin')) {
+          //   accessedRoutes = asyncRoutes || []
+          // } else {
+          //   accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
+          // }
+          // asyncRoutes.push(res.data)
           accessedRoutes = filterAsyncRoutes(res.data, roles);
         }
         //将路由信息保存到store中
