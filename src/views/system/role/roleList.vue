@@ -182,7 +182,6 @@ export default {
       tableHeight: 0, //表格高度
       pageNo: 1, //当前页码
       total: 0, //数据总数量
-      pageNo: 1, //当前页码
       pageSize: 10, //每页显示数量
       //表单验证规则
       rules: {

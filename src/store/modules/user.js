@@ -89,7 +89,6 @@ const actions = {
           }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
-        debugger
         const {
           data
         } = response

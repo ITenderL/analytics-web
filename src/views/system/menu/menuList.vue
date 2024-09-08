@@ -39,7 +39,7 @@
         </template>
       </el-table-column>
       <el-table-column prop="name" label="路由名称"></el-table-column>
-      <el-table-column prop="path" label="理由地址"></el-table-column>
+      <el-table-column prop="path" label="路由地址"></el-table-column>
       <el-table-column prop="url" label="组件路径"></el-table-column>
       <el-table-column label="操作" align="center">
         <template slot-scope="scope">

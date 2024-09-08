@@ -196,7 +196,7 @@
                 :before-upload="beforeAvatarUpload"
                 class="avatar-uploader"
                 :data="uploadHeader"
-                action="http://localhost:8888/api/oss/file/upload?module=avatar"
+                action="http://localhost:7777/api/oss/file/upload?module=avatar"
               >
                 <img v-if="user.avatar" :src="user.avatar" />
                 <i v-else class="el-icon-plus avatar-uploader-icon" />
