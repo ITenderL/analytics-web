@@ -99,6 +99,7 @@
       <el-table-column align="center" prop="supplyName" label="供应商"/>
       <el-table-column width="80" align="center" prop="placeName" label="产地"/>
       <el-table-column width="100" align="center" prop="storeName" label="仓库"/>
+      <el-table-column width="100" align="center" prop="productInvent" label="库存"/>
       <el-table-column align="center" prop="upDownState" label="上下架">
         <template slot-scope="scope">
           {{ showUpDownStateName(scope.row.upDownState) }}
@@ -318,7 +319,7 @@
           :model="purchase"
           ref="purchaseForm"
           :rules="rules"
-          label-width="80px"
+          label-width="100px"
           :inline="true"
           size="small"
         >
@@ -334,7 +335,7 @@
           <el-form-item label="产地">
             <el-input readonly v-model="purchase.placeName"></el-input>
           </el-form-item>
-          <el-form-item label="采购数量">
+          <el-form-item label="预计采购数量">
             <el-input-number style="width: 175px" v-model="purchase.buyNum" @change="productInventChange" :min="1"
                              label="描述文字"
             ></el-input-number>
@@ -422,7 +423,6 @@ export default {
       unitList: [],
       searchModel: {
         // 查询条件
-        roleName: '',
         pageNo: 1, //当前页码
         pageSize: 10, //每页显示数量
         userId: this.$store.getters.userId, //当前登录用户ID
@@ -550,13 +550,13 @@ export default {
       },
       // 采购单窗口属性
       purchaseDialog: {
-        //窗口标题
+        // 窗口标题
         title: '添加采购单',
-        //是否显示窗口
+        // 是否显示窗口
         visible: false,
-        //窗口宽度
-        width: 300,
-        //窗口高度
+        // 窗口宽度
+        width: 360,
+        // 窗口高度
         height: 390
       },
       // 出库单窗口属性
